@@ -1,74 +1,108 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
-<!-- Mirrored from demo.dashboardpack.com/user-management-html/error_500.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2023 14:03:03 GMT -->
 <head>
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>Management Admin</title>
-
-
-<link rel="stylesheet" href="css/bootstrap1.min.css" />
-
-<link rel="stylesheet" href="vendors/themefy_icon/themify-icons.css" />
-
-<link rel="stylesheet" href="vendors/swiper_slider/css/swiper.min.html" />
-
-<link rel="stylesheet" href="vendors/select2/css/select2.min.html" />
-
-<link rel="stylesheet" href="vendors/niceselect/css/nice-select.css" />
-
-<link rel="stylesheet" href="vendors/owl_carousel/css/owl.carousel.css" />
-
-<link rel="stylesheet" href="vendors/gijgo/gijgo.min.css" />
-
-<link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
-<link rel="stylesheet" href="vendors/tagsinput/tagsinput.css" />
-
-<link rel="stylesheet" href="vendors/datepicker/date-picker.css" />
-
-<link rel="stylesheet" href="vendors/datatable/css/jquery.dataTables.min.css" />
-<link rel="stylesheet" href="vendors/datatable/css/responsive.dataTables.min.css" />
-<link rel="stylesheet" href="vendors/datatable/css/buttons.dataTables.min.css" />
-
-<link rel="stylesheet" href="vendors/text_editor/summernote-bs4.css" />
-
-<link rel="stylesheet" href="vendors/morris/morris.css">
-
-<link rel="stylesheet" href="vendors/material_icon/material-icons.css" />
-
-<link rel="stylesheet" href="css/metisMenu.css">
-
-<link rel="stylesheet" href="css/style1.css" />
-<link rel="stylesheet" href="css/colors/default.css" id="colorSkinCSS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Initially hide all rows with the 'person' class */
+        
+        .person {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-<div class="erroe_page_wrapper">
-<div class="errow_wrap">
-<div class="container text-center">
-<img src="img/bak_hovers/sad.png" alt>
-<div class="error_heading  text-center">
-<h3 class="headline color_parpel2">500</h3>
-</div>
-<div class="col-md-8 offset-md-2 text-center">
-<p>The page you are attempting to reach is currently not available. This may be because the page does not exist or has been moved.</p>
-</div>
-<div class="error_btn  text-center">
-<a class=" default_btn parpel_bg2 " href="index-2.html">Back Home</a>
-</div>
-</div>
-</div>
-</div>
+    <button class="btn btn-outline-primary mb-3" onclick="show6()">6th</button>
+    <button class="btn btn-outline-primary mb-3" onclick="show7()">7th</button>
+    <button class="btn btn-outline-primary mb-3" onclick="show8()">8th</button>
+    <button class="btn btn-outline-primary mb-3" onclick="show9()">9th</button>
+    <button class="btn btn-outline-primary mb-3" onclick="showAll()">Show All</button>
 
+    <script>
+        function show6() {
+            hideAll();
+            document.querySelectorAll('.person').forEach(function(row) {
+                if (row.querySelector('td:nth-child(3)').textContent === '6') {
+                    row.style.display = 'table-row';
+                }
+            });
+        }
 
-<script src="js/jquery1-3.4.1.min.js"></script>
+        function show7() {
+            hideAll();
+            document.querySelectorAll('.person').forEach(function(row) {
+                if (row.querySelector('td:nth-child(3)').textContent === '7') {
+                    row.style.display = 'table-row';
+                }
+            });
+        }
 
-<script src="js/popper1.min.js"></script>
+        function show8() {
+            hideAll();
+            document.querySelectorAll('.person').forEach(function(row) {
+                if (row.querySelector('td:nth-child(3)').textContent === '8') {
+                    row.style.display = 'table-row';
+                }
+            });
+        }
 
-<script src="js/bootstrap1.min.js"></script>
+        function show9() {
+            hideAll();
+            document.querySelectorAll('.person').forEach(function(row) {
+                if (row.querySelector('td:nth-child(3)').textContent === '9') {
+                    row.style.display = 'table-row';
+                }
+            });
+        }
+
+        function showAll() {
+            document.querySelectorAll('.person').forEach(function(row) {
+                row.style.display = 'table-row';
+            });
+        }
+
+        function hideAll() {
+            document.querySelectorAll('.person').forEach(function(row) {
+                row.style.display = 'none';
+            });
+        }
+    </script>
+
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="person">
+                <td>John</td>
+                <td>25</td>
+                <td>6</td>
+            </tr>
+            <tr class="person">
+                <td>Mary</td>
+                <td>30</td>
+                <td>7</td>
+            </tr>
+            <tr class="person">
+                <td>David</td>
+                <td>22</td>
+                <td>8</td>
+            </tr>
+            <tr class="person">
+                <td>David</td>
+                <td>22</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 
-<!-- Mirrored from demo.dashboardpack.com/user-management-html/error_500.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2023 14:03:03 GMT -->
 </html>

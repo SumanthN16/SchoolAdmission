@@ -56,7 +56,6 @@
 </head>
 
 <body class="crm_body_bg">
-
     <section>
         <div class="container">
             <div class="p-3"></div>
@@ -64,94 +63,37 @@
                 <div class="row">
                     <div class="d-flex justify-content-center row">
                         <div class="col-3 d-flex justify-content-center pt-3 pb-3"><img src="img/logo.png" alt="" width="50%"></div>
-
                         <div class="col-9 text-center pt-3 pb-3">
                             <h1>ಆಳ್ವಾಸ್ ಕನ್ನಡ ಮಾಧ್ಯಮ ಶಾಲೆ</h1><br>
                             <h4>Free Education Scheme</h4>
                             <h4>Alva's Education Foundation(R)</h4>
                             <h6>Vivekananda Nagara, Puttige, Sampige Post, Moodubidre, Pin - 574227</h6>
+                            <a href="index.html">Dash</a>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-
         <div class="container pt-5">
             <div class="card1 p-5">
-
                 <div class="white_box mb_30 modal-content cs_modal">
                     <div class="row p-2 justify-content-center">
                         <div class="col-lg-3 col-md-3 p-3">
-
                             <a href="Registration.html">
                                 <div class="btn btn-outline-success mb-3">Register to Exam</div>
                             </a>
-
-
                         </div>
                         <div class="col-lg-3 col-md-3 p-3">
                             <a href="b.html">
                                 <div class="btn btn-outline-success mb-3">Login to download Hall Ticket</div>
                             </a>
-
-
                         </div>
-
-
-
-
-
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <script>
-        document.getElementById("img-1").addEventListener("change", function() {
-            var fileInput = this;
-            var errorSpan = document.querySelector(".error");
 
-            // Check if a file has been selected
-            if (!fileInput.files || !fileInput.files[0]) {
-                errorSpan.textContent = "Please select a photo.";
-                return;
-            }
-
-            var file = fileInput.files[0];
-            var maxSize = 250 * 1024; // 250KB
-
-            // Check file size
-            if (file.size > maxSize) {
-                errorSpan.textContent = "Max file size exceeded (250KB).";
-                fileInput.value = ''; // Clear the file input
-            } else {
-                errorSpan.textContent = ""; // Reset error message
-            }
-        });
-
-        document.getElementById("studentForm").addEventListener("submit", function(event) {
-            var fileInput = document.getElementById("img-1");
-            var errorSpan = document.querySelector(".error");
-
-            // Check if a file has been selected
-            if (!fileInput.files || !fileInput.files[0]) {
-                errorSpan.textContent = "Please select a photo.";
-                event.preventDefault(); // Prevent form submission
-                return;
-            }
-
-            // Check if the file size has already been validated
-            if (errorSpan.textContent !== "") {
-                event.preventDefault(); // Prevent form submission
-                return;
-            }
-        });
-    </script>
     <div id="back-top" style="display: none;">
         <a title="Go to Top" href="#">
             <i class="ti-angle-up"></i>
