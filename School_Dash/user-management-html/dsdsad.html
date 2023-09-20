@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://alvascollege.com/wp-content/uploads/2019/03/logo.png" alt="Logo" class="logo">
+        <div class="form-container">
+            <form id="registration-form">
+                <h2>Register</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <form id="login-form">
+                <h2>Login</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Second Page with Options -->
+    <div id="second-page" class="hidden">
+        <div class="container">
+            <h2>Choose an Option:</h2>
+            <div class="options">
+                <div class="option-box" onclick="goToPage('page1.html')">6</div>
+                <div class="option-box" onclick="goToPage('page2.html')">7</div>
+                <div class="option-box" onclick="goToPage('page3.html')">8</div>
+                <div class="option-box" onclick="goToPage('page4.html')">9</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to handle form submission
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // You can add your registration logic here.
+            // After successful registration, show the second page.
+            document.getElementById("second-page").classList.remove("hidden");
+            this.reset(); // Clear the registration form
+        });
+
+        // JavaScript function to navigate to different pages
+        function goToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+</body>
+
+</html>

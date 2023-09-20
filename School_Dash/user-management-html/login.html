@@ -40,6 +40,7 @@
 
     <link rel="stylesheet" href="css/style1.css" />
     <link rel="stylesheet" href="css/colors/default.css" id="colorSkinCSS">
+    <link rel="stylesheet" href="b.css">
     <style>
         .card1 {
             background: rgba( 255, 255, 255, 0.45);
@@ -79,9 +80,10 @@
                 <div class="white_box mb_30 modal-content cs_modal">
                     <div class="row p-2 justify-content-center">
                         <div class="col-lg-3 col-md-3 p-3">
-                            <a href="Registration.html">
-                                <div class="btn btn-outline-success mb-3">Register to Exam</div>
-                            </a>
+                            <form id="registration-form">
+                                <!-- <h2>Register</h2> -->
+                                <button type="submit" class="btn btn-outline-success mb-3">Register</button>
+                            </form>
                         </div>
                         <div class="col-lg-3 col-md-3 p-3">
                             <a href="b.html">
@@ -89,11 +91,47 @@
                             </a>
                         </div>
                     </div>
+                    <div id="second-page" class="hidden">
+                        <div class="container ">
+                            <h2>Choose an Class: </h2>
+                            <div class="options d-flex justify-content-center">
+                                <div class="p-2">
+                                    <div class="btn btn-outline-primary mb-3 p-3" onclick="goToPage('Registration6.php')">6</div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="btn btn-outline-primary mb-3 p-3" onclick="goToPage('Registration7.php')">7</div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="btn btn-outline-primary mb-3 p-3" onclick="goToPage('Registration8.php')">8</div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="btn btn-outline-primary mb-3 p-3" onclick="goToPage('Registration9.php')">9</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Second Page with Options -->
 
+
+    <script>
+        // JavaScript function to handle form submission
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // You can add your registration logic here.
+            // After successful registration, show the second page.
+            document.getElementById("second-page").classList.remove("hidden");
+            this.reset(); // Clear the registration form
+        });
+
+        // JavaScript function to navigate to different pages
+        function goToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
     <div id="back-top" style="display: none;">
         <a title="Go to Top" href="#">
             <i class="ti-angle-up"></i>

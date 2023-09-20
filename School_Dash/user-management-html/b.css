@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
@@ -51,44 +51,15 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
+} */
+
 
 /* Hide the second page initially */
+
 .hidden {
     display: none;
 }
 
 #second-page {
     text-align: center;
-}
-
-.options {
-    /* display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    padding:10px; */
-    width: 100px; /* Adjust the width as needed */
-        height: 100px; /* Adjust the height as needed */
-        background-color: #ccc; /* Add your desired background color */
-        margin: 10px; /* Adjust the margin to control the spacing between option boxes */
-        display: inline-block; /* Display option boxes in a row */
-        text-align: center; /* Center the text horizontally */
-        line-height: 100px; /* Center the text vertically */
-        cursor: pointer;
-}
-
-.option-box {
-    width: 100px;
-    height: 100px;
-    background-color: #007bff;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.option-box:hover {
-    background-color: #0056b3;
 }

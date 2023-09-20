@@ -7,7 +7,6 @@ if(isset($_GET['action'])){
 switch($function){
 
     case 'add_student':
-        echo "Hello";
         add_student();
         break;
 
@@ -30,8 +29,8 @@ switch($function){
 
 function add_student(){
     include('connect.php');
-    
-        $first_name=$_POST["name"];
+        $AN=$_POST["AN"];
+        $SName=$_POST["name"];
         $Class=$_POST["class"];
         $Number=$_POST["number"];
         $Aadhar=$_POST["aadhar"];
@@ -55,19 +54,32 @@ function add_student(){
         $Village=$_POST["Village"];
         $Post=$_POST["post"];
         // $Post=$_POST["post"];
-
+        // $school=$_GET['school']
+        if($AN>=90000){
+            $insert="INSERT INTO `school9`(`Application_Number`, `Name`, `Class`, `Number`, `Aadhar`, `SATS`, `Photo`, `Father_Name`, `Father_Contact`, `Father_Occupation`, `Mother_Name`, `Mother_Contact`, `Mother_Occupation`, `DOB`, `Gender`, `Email`, `Caste`, `MotherT`, `State`, `District`, `Taluk`, `Pincode`, `Village`, `Post`)        
+            VALUES ('$AN','$SName','$Class','$Number','$Aadhar','$SATS','$photo','$Father','$Father_Contact','$Father_Occupation','$Mother','$Mother_Contact','$Mother_Occupation','$DOB','$Gender','$Email','$Caste','$MotherT','$State','$District','$Taluk','$PinCode','$Village','$Post')";    
+        }
+        else if($AN>=80000){
+            $insert="INSERT INTO `school8`(`Application_Number`, `Name`, `Class`, `Number`, `Aadhar`, `SATS`, `Photo`, `Father_Name`, `Father_Contact`, `Father_Occupation`, `Mother_Name`, `Mother_Contact`, `Mother_Occupation`, `DOB`, `Gender`, `Email`, `Caste`, `MotherT`, `State`, `District`, `Taluk`, `Pincode`, `Village`, `Post`)        
+            VALUES ('$AN','$SName','$Class','$Number','$Aadhar','$SATS','$photo','$Father','$Father_Contact','$Father_Occupation','$Mother','$Mother_Contact','$Mother_Occupation','$DOB','$Gender','$Email','$Caste','$MotherT','$State','$District','$Taluk','$PinCode','$Village','$Post')";    
+        }
+        else if($AN>=70000){
+            $insert="INSERT INTO `school7`(`Application_Number`, `Name`, `Class`, `Number`, `Aadhar`, `SATS`, `Photo`, `Father_Name`, `Father_Contact`, `Father_Occupation`, `Mother_Name`, `Mother_Contact`, `Mother_Occupation`, `DOB`, `Gender`, `Email`, `Caste`, `MotherT`, `State`, `District`, `Taluk`, `Pincode`, `Village`, `Post`)        
+            VALUES ('$AN','$SName','$Class','$Number','$Aadhar','$SATS','$photo','$Father','$Father_Contact','$Father_Occupation','$Mother','$Mother_Contact','$Mother_Occupation','$DOB','$Gender','$Email','$Caste','$MotherT','$State','$District','$Taluk','$PinCode','$Village','$Post')";    
+        }
+        else{
+            $insert="INSERT INTO `school6`(`Application_Number`, `Name`, `Class`, `Number`, `Aadhar`, `SATS`, `Photo`, `Father_Name`, `Father_Contact`, `Father_Occupation`, `Mother_Name`, `Mother_Contact`, `Mother_Occupation`, `DOB`, `Gender`, `Email`, `Caste`, `MotherT`, `State`, `District`, `Taluk`, `Pincode`, `Village`, `Post`)        
+            VALUES ('$AN','$SName','$Class','$Number','$Aadhar','$SATS','$photo','$Father','$Father_Contact','$Father_Occupation','$Mother','$Mother_Contact','$Mother_Occupation','$DOB','$Gender','$Email','$Caste','$MotherT','$State','$District','$Taluk','$PinCode','$Village','$Post')";    
        
-        echo "hih";
-
-        $insert="INSERT INTO `school`(`Name`, `Class`, `Number`, `Aadhar`, `Photo`, `Father_Name`, `Father_Contact`, `Father_Occupation`, `Mother_Name`, `Mother_Contact`, `Mother_Occupation`, `DOB`, `Gender`, `Email`, `Caste`, `MotherT`, `State`, `District`, `Taluk`, `Pincode`, `Village`, `Post`) 
-        VALUES ('$first_name','$Class','$Number','$Aadhar','$photo','$Father','$Father_Contact','$Father_Occupation','$Mother','$Mother_Contact','$Mother_Occupation','$DOB','$Gender','$Email','$Caste','$MotherT','$State','$District','$Taluk','$PinCode','$Village','$Post')";
-                $result=mysqli_query($conn,$insert);
+        }
+         $result=mysqli_query($conn,$insert);
+                $key_code=$_GET["keycode"];
+                echo "$key_code";
                 if(!$result){
-                    echo "0";
-                    echo "<script>location.href='Registration.html';alert('Something went wrong !!');</script> HII";
+                    echo "<script>location.href='Registration.html';alert('Something went wrong !!');</script>";
                 }else{
-                    echo $filename."Your file was uploaded successfully.";
-                    echo "<script>location.href='Registration.html'; alert('Added Successfully..');</script>";
+                    // echo $filename."Your file was uploaded successfully.";
+                    echo "<script>location.href='invoice.php?AN=$AN';alert('Added Successfully..');</script>";
                 }                
     }
     
@@ -123,14 +135,3 @@ function Edit_Admin(){
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>bhdc</h1>
-</body>
-</html>
