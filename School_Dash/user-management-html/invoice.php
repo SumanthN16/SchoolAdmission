@@ -43,8 +43,6 @@ $PinCode=$row['Pincode'];
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from demo.dashboardpack.com/user-management-html/invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2023 14:03:07 GMT -->
-
 <head>
 
     <meta charset="utf-8" />
@@ -103,8 +101,11 @@ $PinCode=$row['Pincode'];
 
     <section>
         <div class="container pt-3  ">
+        
             <div class="card">
+            
                 <div class="card-header">
+                <div id="google_translate_element" class="d-flex justify-content-end"></div>
                     <div class="row">
                         <div class="d-flex justify-content-center row">
                             <div class="col-3 d-flex justify-content-center pt-3 pb-3"><img src="img/logo.png" alt="" width="50%"></div>
@@ -307,7 +308,17 @@ $PinCode=$row['Pincode'];
     function GetPrint(){
         window.print();
     }
+    
 </script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/jquery1-3.4.1.min.js"></script>
 

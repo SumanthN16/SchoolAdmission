@@ -79,7 +79,7 @@ function add_student(){
                     echo "<script>location.href='Registration.html';alert('Something went wrong !!');</script>";
                 }else{
                     // echo $filename."Your file was uploaded successfully.";
-                    echo "<script>location.href='invoice.php?AN=$AN';alert('Added Successfully..');</script>";
+                    echo "<script>location.href='invoicekanda.php?AN=$AN';alert('Added Successfully..');</script>";
                 }                
     }
     

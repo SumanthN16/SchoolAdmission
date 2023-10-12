@@ -61,6 +61,8 @@
         <div class="container">
             <div class="p-3"></div>
             <div class="card1 row d-flex justify-content-center">
+                <div id="google_translate_element" class="d-flex justify-content-end"></div>
+
                 <div class="row">
                     <div class="d-flex justify-content-center row">
                         <div class="col-3 d-flex justify-content-center pt-3 pb-3"><img src="img/logo.png" alt="" width="50%"></div>
@@ -132,6 +134,14 @@
             window.location.href = pageUrl;
         }
     </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="back-top" style="display: none;">
         <a title="Go to Top" href="#">
             <i class="ti-angle-up"></i>
